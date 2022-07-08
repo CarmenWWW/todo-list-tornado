@@ -2,10 +2,11 @@ import tornado.web
 from handler import item as item_handlers
 
 HANDLERS = [
-    (r"/api/users", item_handlers.ItemListHandler),
-     (r"/api/users/", item_handlers.ItemListHandler),
-    (r"/api/users/(.+)", item_handlers.ItemHandler)
+    (r"/", item_handlers.ItemListHandler),
+    (r"/(.+)", item_handlers.ItemHandler)
 ]
+
+
 
 def run():
     app = tornado.web.Application(
